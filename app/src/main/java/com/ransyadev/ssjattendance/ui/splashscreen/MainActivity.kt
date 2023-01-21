@@ -1,14 +1,18 @@
 package com.ransyadev.ssjattendance.ui.splashscreen
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.ktx.Firebase
-import com.ransyadev.ssjattendance.R
+import com.google.firebase.ktx.initialize
+import com.google.firebase.messaging.FirebaseMessaging
 import com.ransyadev.ssjattendance.data.implementation.database.SSJPreference
 import com.ransyadev.ssjattendance.databinding.ActivityMainBinding
 import com.ransyadev.ssjattendance.ui.home.HomeActivity
+import com.ransyadev.ssjattendance.ui.onboarding.OnBoardingActivity
+import com.ransyadev.ssjattendance.utils.firebase.MyFirebaseMessagingService
+import com.ransyadev.ssjattendance.utils.firebase.NotificationListener
 import com.ransyadev.ssjattendance.utils.openActivity
 
 class MainActivity : AppCompatActivity() {
@@ -17,13 +21,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        Firebase.initialize(this)
         initView()
 
     }
 
     private fun initView() {
-        /*val isFirstInstall = SSJPreference.isFirstInstall
+        setNewFirebaseToken()
+        val isFirstInstall = SSJPreference.isFirstInstall
         val isLogin = SSJPreference.isLogin
 
         Handler(Looper.getMainLooper()).postDelayed({
@@ -36,9 +41,26 @@ class MainActivity : AppCompatActivity() {
                     finish()
                 }
             }else{
-                //TODO : open on boarding screen
+                openActivity(OnBoardingActivity::class.java)
                 finish()
             }
-        }, 1500L)*/
+        }, 1500L)
+    }
+
+    private fun setNewFirebaseToken() {
+        var newToken = ""
+        FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                val token = task.result
+                newToken = token
+            }
+
+            MyFirebaseMessagingService().sendNotifications(newToken, object :
+                NotificationListener {
+                override fun onNewToken(token: String) {
+                    SSJPreference.tokenFCM = token
+                }
+            })
+        }
     }
 }

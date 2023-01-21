@@ -23,7 +23,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         })
     }
 
-    private fun sendNotifications(token: String, listener: NotificationListener) {
+    fun sendNotifications(token: String, listener: NotificationListener) {
         listener.onNewToken(token)
     }
 
