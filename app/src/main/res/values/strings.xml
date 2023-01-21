@@ -13,6 +13,7 @@
     <string name="txt_title_boarding_one_desc">SSJ Absensi merupakan sebuah aplikasi \nabsensi untuk karyawan CV Solo Satu Jiwa</string>
     <string name="txt_title_boarding_two">Get Started Now !</string>
     <string name="txt_title_boarding_two_desc">Selamat datang di aplikasi SSJ Absensi \ngunakan aplikasi ini denganbaik dan bijak</string>
+    <string name="txt_get_started">Get Started</string>
 
     <!--Login-->
     <string name="txt_hint_email">Email</string>
