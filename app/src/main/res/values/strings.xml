@@ -1,3 +1,50 @@
 <resources>
-    <string name="app_name">SSJAttendance</string>
+    <string name="app_name">SSJ Absensi</string>
+
+    <!--Firebase Messaging-->
+    <string name="default_notification_channel_id">ssj-attendance</string>
+    <string name="default_notification_channel_name">ssj-attendance</string>
+
+    <!--Name App-->
+    <string name="txt_name_app">CV Solo Satu Jiwa Absensi</string>
+
+    <!--On Boarding-->
+    <string name="txt_title_boarding_one">Apa itu SSJ Absensi ?</string>
+    <string name="txt_title_boarding_one_desc">SSJ Absensi merupakan sebuah aplikasi \nabsensi untuk karyawan CV Solo Satu Jiwa</string>
+    <string name="txt_title_boarding_two">Get Started Now !</string>
+    <string name="txt_title_boarding_two_desc">Selamat datang di aplikasi SSJ Absensi \ngunakan aplikasi ini denganbaik dan bijak</string>
+
+    <!--Login-->
+    <string name="txt_hint_email">Email</string>
+    <string name="txt_hint_password">Password</string>
+    <string name="txt_login">Login</string>
+    <string name="txt_or">atau</string>
+    <string name="txt_issue_login">Lapor kendala login ke</string>
+    <string name="txt_email_ssj">support@ssj.co.id</string>
+    <string name="txt_welcome">Welcome</string>
+    <string name="txt_login_to_continue">Login to continue</string>
+
+    <!--Toolbar-->
+    <string name="txt_toolbar_profile">Profile</string>
+    <string name="txt_toolbar_history_attendance">Riwayat Absensi</string>
+
+    <!--Bottom Nav-->
+    <string name="txt_nav_home">Home</string>
+    <string name="txt_nav_history">History</string>
+    <string name="txt_nav_profile">Account</string>
+
+    <!--Profile-->
+    <string name="txt_nik">NIK</string>
+    <string name="txt_department">Bagian</string>
+    <string name="txt_category">Kategori</string>
+    <string name="txt_about_app">Tentang Aplikasi</string>
+
+    <!--Bottom Sheet-->
+    <string name="txt_attendance_out">Apakah Anda yakin ingin melakukan absen keluar ?</string>
+    <string name="txt_exit_app">Apakah Anda yakin ingin keluar ?</string>
+    <string name="label_yes">Yes</string>
+    <string name="label_no">No</string>
+    <string name="label_success">Success</string>
+    <string name="label_success_attendance_out">Berhasil melakukan absen keluar !</string>
+
 </resources>
